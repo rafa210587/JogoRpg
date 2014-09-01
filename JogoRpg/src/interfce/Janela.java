@@ -16,7 +16,7 @@ public class Janela extends JFrame{
 	
 		
 	setLayout(null);	
-	setTitle("TelaInicial");
+	setTitle("Tela Inicial");
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	setSize(800, 600);
 	setLocationRelativeTo(null);
