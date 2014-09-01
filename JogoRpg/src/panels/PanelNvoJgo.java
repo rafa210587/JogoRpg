@@ -17,7 +17,7 @@ public class PanelNvoJgo extends JPanel {
 	
 	public PanelNvoJgo(){
 		
-		Font FonteBt = new Font("Sans_serif" ,Font.BOLD, 8);
+		Font FonteBt = new Font("Sans_serif" ,Font.BOLD, 5);
 
 		MaxCharTxt maxCharNome = new MaxCharTxt();
 		JLabel lblNomeChar = new JLabel("Nome");
@@ -92,12 +92,14 @@ public class PanelNvoJgo extends JPanel {
 		lblForca.setBounds(50, 190, 50, 20);
 		add(txtForca);
 		txtForca.setEditable(false);
-		txtForca.setBounds(110, 190,20,20);
+		txtForca.setBounds(110, 190,30,30);
 		add(btDimFor);
 		btDimFor.setBounds(90, 190, 30, 20);
 		btDimFor.setFont(FonteBt);
-		add(btAumFor).setBounds(130, 190, 50, 50);
+		add(btAumFor).setBounds(130, 190, 30, 30);
 		btAumFor.setFont(FonteBt);
+		
+		
 		
 		
 		
