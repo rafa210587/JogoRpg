@@ -28,14 +28,14 @@ public class PanelNvoJgo extends JPanel {
 		JLabel lblForca = new JLabel("Str");
 		JLabel lblDestreza = new JLabel("Dex");
 		JLabel lblAgilidade = new JLabel("Agi");
-		JLabel lblVigor = new JLabel("Vigor");
+		JLabel lblVitalidade = new JLabel("Vit");
 		JLabel lblInteligencia = new JLabel("Int");
 		JLabel lblVontade = new JLabel("Wil");
 		
 		JTextField txtForca = new JTextField();
 		JTextField txtDestreza = new JTextField();
 		JTextField txtAgilidade = new JTextField();
-		JTextField txtVigor = new JTextField();
+		JTextField txtVitalidade = new JTextField();
 		JTextField txtInteligencia = new JTextField();
 		JTextField txtVontade = new JTextField();
 		
@@ -45,8 +45,8 @@ public class PanelNvoJgo extends JPanel {
 		JButton btDimDes = new JButton("-");
 		JButton btAumAgi = new JButton("+");
 		JButton btDimAgi = new JButton("-");
-		JButton btAumVig = new JButton("+");
-		JButton btDimVig = new JButton("-");
+		JButton btAumVit = new JButton("+");
+		JButton btDimVit = new JButton("-");
 		JButton btAumInt = new JButton("+");
 		JButton btDimInt = new JButton("-");
 		JButton btAumVont = new JButton("+");
@@ -92,9 +92,11 @@ public class PanelNvoJgo extends JPanel {
 		
 		add(lblForca);
 		lblForca.setBounds(50, 190, 50, 20);
+		
 		add(txtForca);
 		txtForca.setEditable(false);
 		txtForca.setBounds(110, 190,20,20);
+		txtForca.setBackground(Color.white);
 		
 		add(btDimFor);
 		btDimFor.setBorder(BorderFactory.createEmptyBorder());
@@ -107,6 +109,81 @@ public class PanelNvoJgo extends JPanel {
 		btAumFor.setBorder(BorderFactory.createEmptyBorder());
 		btAumFor.setFocusPainted(false);
 		
+		add(lblVitalidade);
+		lblVitalidade.setBounds(50, 220, 50, 20);
+		
+		add(txtVitalidade);
+		txtVitalidade.setEditable(false);
+		txtVitalidade.setBounds(110, 220,20,20);
+		txtVitalidade.setBackground(Color.white);
+		
+		add(btDimVit);
+		btDimVit.setBorder(BorderFactory.createEmptyBorder());
+		btDimVit.setFocusPainted(false);		
+		btDimVit.setBounds(90, 220, 20, 20);
+		btDimVit.setFont(FonteBt);
+		
+		add(btAumVit).setBounds(130, 220, 20, 20);
+		btAumVit.setFont(FonteBt);
+		btAumVit.setBorder(BorderFactory.createEmptyBorder());
+		btAumVit.setFocusPainted(false);
+		
+		add(lblDestreza);
+		lblDestreza.setBounds(50, 250, 50, 20);
+		
+		add(txtDestreza);
+		txtDestreza.setEditable(false);
+		txtDestreza.setBounds(110, 250,20,20);
+		txtDestreza.setBackground(Color.white);
+		
+		add(btDimDes);
+		btDimDes.setBorder(BorderFactory.createEmptyBorder());
+		btDimDes.setFocusPainted(false);		
+		btDimDes.setBounds(90, 250, 20, 20);
+		btDimDes.setFont(FonteBt);
+		
+		add(btAumDes).setBounds(130, 250, 20, 20);
+		btAumDes.setFont(FonteBt);
+		btAumDes.setBorder(BorderFactory.createEmptyBorder());
+		btAumDes.setFocusPainted(false);
+		
+		add(lblAgilidade);
+		lblAgilidade.setBounds(50, 280, 50, 20);
+		
+		add(txtAgilidade);
+		txtAgilidade.setEditable(false);
+		txtAgilidade.setBounds(110, 280,20,20);
+		txtAgilidade.setBackground(Color.white);
+		
+		add(btDimAgi);
+		btDimAgi.setBorder(BorderFactory.createEmptyBorder());
+		btDimAgi.setFocusPainted(false);		
+		btDimAgi.setBounds(90, 280, 20, 20);
+		btDimAgi.setFont(FonteBt);
+		
+		add(btAumAgi).setBounds(130, 280, 20, 20);
+		btAumAgi.setFont(FonteBt);
+		btAumAgi.setBorder(BorderFactory.createEmptyBorder());
+		btAumAgi.setFocusPainted(false);
+		
+		add(lblInteligencia);
+		lblInteligencia.setBounds(50, 310, 50, 20);
+		
+		add(txtInteligencia);
+		txtInteligencia.setEditable(false);
+		txtInteligencia.setBounds(110, 310,20,20);
+		txtInteligencia.setBackground(Color.white);
+		
+		add(btDimInt);
+		btDimInt.setBorder(BorderFactory.createEmptyBorder());
+		btDimInt.setFocusPainted(false);		
+		btDimInt.setBounds(90, 310, 20, 20);
+		btDimInt.setFont(FonteBt);
+		
+		add(btAumInt).setBounds(130, 310, 20, 20);
+		btAumInt.setFont(FonteBt);
+		btAumInt.setBorder(BorderFactory.createEmptyBorder());
+		btAumInt.setFocusPainted(false);
 		
 	}
 	
