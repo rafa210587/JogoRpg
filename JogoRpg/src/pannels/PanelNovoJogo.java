@@ -19,6 +19,20 @@ public class PanelNovoJogo extends JPanel {
 	
 	public PanelNovoJogo(){
 		
+		
+		
+		
+		setLayout(null);
+		setSize(800, 600);
+		setVisible(true);
+		
+		cabeçalhoAtributos();
+		
+		
+	}
+	public void cabeçalhoAtributos(){
+		
+		
 		Font FonteBt = new Font("Sans_serif" ,Font.BOLD, 8);
 
 		MaxCharTxt maxCharNome = new MaxCharTxt();
@@ -60,12 +74,7 @@ public class PanelNovoJogo extends JPanel {
 		
 		
 		
-		setLayout(null);
-		setSize(800, 600);
-		setVisible(true);
-		
-	
-		maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres num TextField
+maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres num TextField
 		
 		
 		txtNomeChar.setDocument(maxCharNome);
@@ -204,7 +213,20 @@ public class PanelNovoJogo extends JPanel {
 		btAumVont.setBorder(BorderFactory.createEmptyBorder());
 		btAumVont.setFocusPainted(false);
 		
+		
 	}
 	
 	
+	public void organiza2(){
+		
+		JLabel lblHP = new JLabel("HP");
+		
+		
+		
+		
+		
+		
+	}
 }
+
+

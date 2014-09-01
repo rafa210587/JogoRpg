@@ -15,15 +15,19 @@ public class MenuJan extends JMenuBar{
 		
 		JMenu arquivoMenu = new JMenu ("Arquivo");
 		JMenuItem sairMenu = new JMenuItem ("Sair");
+		JMenuItem teste = new JMenuItem("");
 		
 		JMenuItem nvoJogo = new JMenuItem("Novo");
 		JMenuItem  carregarJogo= new JMenuItem ("Carregar");
 		
 		
 		
+		
 		add(arquivoMenu);
 		add(sairMenu);
-		
+		add(teste);
+
+		teste.setEnabled(false);
 		arquivoMenu.add(nvoJogo);
 		arquivoMenu.add(carregarJogo);
 		
