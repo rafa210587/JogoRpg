@@ -3,11 +3,13 @@ package pannels;
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
 
 import utils.MaxCharTxt;
 
@@ -93,14 +95,20 @@ public class PanelNvoJgo extends JPanel {
 		add(txtForca);
 		txtForca.setEditable(false);
 		txtForca.setBounds(110, 190,20,20);
-		add(btDimFor);
-		btDimFor.setBounds(90, 190, 30, 20);
-		btDimFor.setFont(FonteBt);
-		add(btAumFor).setBounds(130, 190, 50, 50);
-		btAumFor.setFont(FonteBt);
 		
+		add(btDimFor);
+		btDimFor.setBorder(BorderFactory.createEmptyBorder());
+		btDimFor.setFocusPainted(false);		
+		btDimFor.setBounds(90, 190, 20, 20);
+		btDimFor.setFont(FonteBt);
+		
+		add(btAumFor).setBounds(130, 190, 20, 20);
+		btAumFor.setFont(FonteBt);
+		btAumFor.setBorder(BorderFactory.createEmptyBorder());
+		btAumFor.setFocusPainted(false);
 		
 		
 	}
-
+	
+	
 }
