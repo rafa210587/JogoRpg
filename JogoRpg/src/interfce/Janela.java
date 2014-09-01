@@ -6,7 +6,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import pannels.PaneInicio;
+import pannels.PanelInicio;
 
 public class Janela extends JFrame{
 	

@@ -13,11 +13,11 @@ import javax.swing.UIManager;
 
 import utils.MaxCharTxt;
 
-public class PanelNvoJgo extends JPanel {
+public class PanelNovoJogo extends JPanel {
 	
 	
 	
-	public PanelNvoJgo(){
+	public PanelNovoJogo(){
 		
 		Font FonteBt = new Font("Sans_serif" ,Font.BOLD, 8);
 
@@ -184,6 +184,25 @@ public class PanelNvoJgo extends JPanel {
 		btAumInt.setFont(FonteBt);
 		btAumInt.setBorder(BorderFactory.createEmptyBorder());
 		btAumInt.setFocusPainted(false);
+		
+		add(lblVontade);
+		lblVontade.setBounds(50, 340, 50, 20);
+		
+		add(txtVontade);
+		txtVontade.setEditable(false);
+		txtVontade.setBounds(110, 340,20,20);
+		txtVontade.setBackground(Color.white);
+		
+		add(btDimVont);
+		btDimVont.setBorder(BorderFactory.createEmptyBorder());
+		btDimVont.setFocusPainted(false);		
+		btDimVont.setBounds(90, 340, 20, 20);
+		btDimVont.setFont(FonteBt);
+		
+		add(btAumVont).setBounds(130, 340, 20, 20);
+		btAumVont.setFont(FonteBt);
+		btAumVont.setBorder(BorderFactory.createEmptyBorder());
+		btAumVont.setFocusPainted(false);
 		
 	}
 	

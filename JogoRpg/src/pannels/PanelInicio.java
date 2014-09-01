@@ -14,10 +14,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class PaneInicio extends JPanel {
+public class PanelInicio extends JPanel {
 	
 	
-	public PaneInicio(){
+	public PanelInicio(){
 	setLayout(null);
 	setSize(800,600);
 	setVisible(true);
@@ -43,9 +43,9 @@ public class PaneInicio extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			
-			TelaInicial.janela1.remove(TelaInicial.paneLogin);
-			TelaInicial.pane2.setVisible(true);
-			TelaInicial.janela1.add(TelaInicial.pane2);
+			TelaInicial.janela1.remove(TelaInicial.panelLogin);
+			TelaInicial.panel2.setVisible(true);
+			TelaInicial.janela1.add(TelaInicial.panel2);
 			TelaInicial.janela1.repaint();
 			
 		}

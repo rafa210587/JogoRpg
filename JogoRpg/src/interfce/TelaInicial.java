@@ -2,8 +2,8 @@ package interfce;
 
 import javax.swing.JPanel;
 
-import pannels.PaneInicio;
-import pannels.PanelNvoJgo;
+import pannels.PanelInicio;
+import pannels.PanelNovoJogo;
 
 
 public class TelaInicial {
@@ -11,8 +11,8 @@ public class TelaInicial {
 	
 	
 	public static Janela janela1 = new Janela();
-	public static PaneInicio paneLogin = new PaneInicio();	
-	public static PanelNvoJgo pane2 = new PanelNvoJgo();	
+	public static PanelInicio panelLogin = new PanelInicio();	
+	public static PanelNovoJogo panel2 = new PanelNovoJogo();	
 
 
 	/*public static void esconderTela(){
@@ -23,7 +23,7 @@ public class TelaInicial {
 	public TelaInicial(){
 
 		
-		janela1.add(paneLogin);
+		janela1.add(panelLogin);
 		janela1.repaint();
 		//janela1.remove(paneLogin);
 	}
