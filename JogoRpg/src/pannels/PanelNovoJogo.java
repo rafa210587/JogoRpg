@@ -15,26 +15,25 @@ import utils.MaxCharTxt;
 
 public class PanelNovoJogo extends JPanel {
 	
-	
-	
 	public PanelNovoJogo(){
-		
-		
-		
 		
 		setLayout(null);
 		setSize(800, 600);
-		setVisible(true);
 		
 		cabeçalhoAtributos();
 		
-		
+		setVisible(true);
 	}
+	
 	public void cabeçalhoAtributos(){
 		
+		PanelAtributos panelAtributos = new PanelAtributos();
 		
 		Font FonteBt = new Font("Sans_serif" ,Font.BOLD, 8);
-
+		
+		panelAtributos.setBounds(200, 180, 300, 300);
+		add(panelAtributos);
+		
 		MaxCharTxt maxCharNome = new MaxCharTxt();
 		JLabel lblNomeChar = new JLabel("Nome");
 		JLabel lblClass = new JLabel("Classes");
@@ -79,7 +78,7 @@ maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres n
 		
 		txtNomeChar.setDocument(maxCharNome);
 		//JButton b2 = new JButton("Carregar");
-		
+
 		add(lblNomeChar);
 		lblNomeChar.setBounds(50, 30, 120, 20);
 		add(txtNomeChar);
