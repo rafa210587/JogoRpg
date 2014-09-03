@@ -1,7 +1,11 @@
 package pannels;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -211,7 +215,6 @@ maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres n
 		btAumVont.setFont(FonteBt);
 		btAumVont.setBorder(BorderFactory.createEmptyBorder());
 		btAumVont.setFocusPainted(false);
-		
 		
 	}
 	
