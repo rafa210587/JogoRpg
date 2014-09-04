@@ -15,7 +15,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanelInicio extends JPanel {
-	
+	public static PanelNovoJogo panel2;	
+
 	
 	public PanelInicio(){
 	setLayout(null);
@@ -43,14 +44,19 @@ public class PanelInicio extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			
+			setPanelNovoJogo();
 			TelaInicial.janela1.remove(TelaInicial.panelLogin);
-			TelaInicial.panel2.setVisible(true);
-			TelaInicial.janela1.add(TelaInicial.panel2);
+			panel2.setVisible(true);
+			TelaInicial.janela1.add(panel2);
 			TelaInicial.janela1.repaint();
 			
 		}
 	});
 	}
+	public void setPanelNovoJogo(){
+		this.panel2 = new PanelNovoJogo();
+		
+	};
 	
 }
 	
