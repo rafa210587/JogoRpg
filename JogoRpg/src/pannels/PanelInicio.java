@@ -12,10 +12,7 @@ import javax.swing.JPanel;
 public class PanelInicio extends JPanel {
 	public static PanelNovoJogo panel2;	
 
-	
-	
 	private static final long serialVersionUID = -9176332488581018733L;
-
 
 	public PanelInicio(){
 	setLayout(null);
