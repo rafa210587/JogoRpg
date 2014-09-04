@@ -1,6 +1,7 @@
 package pannels;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 
 import javax.swing.BorderFactory;
@@ -8,6 +9,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import buttonEvents.PannelAtrbEvent;
 
 public class PanelAtributos extends JPanel{
 
@@ -40,6 +43,7 @@ public class PanelAtributos extends JPanel{
 		label.setBounds(x, y, 50, 30);
 		
 		x += 40;
+		y += 5;
 		
 		return label;
 	}
@@ -50,9 +54,8 @@ public class PanelAtributos extends JPanel{
 		button.setName("btn" + s + buttonIcon);
 		button.setBounds(x, y, 20, 20);
 		button.setFont(FonteBt);
-		button.setBorder(BorderFactory.createEmptyBorder()); 
-		
-		System.out.println(button.getName());
+		button.setBorder(BorderFactory.createEmptyBorder());
+		button.addActionListener(new PannelAtrbEvent());
 		
 		x+= 20;
 		
