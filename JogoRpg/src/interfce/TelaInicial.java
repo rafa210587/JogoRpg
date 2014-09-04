@@ -8,8 +8,9 @@ public class TelaInicial {
 
 	
 	
-	public static Janela janela1;
-	public static PanelInicio panelLogin;	
+	public static Janela janela1 = new Janela();
+	public static PanelInicio panelLogin = new PanelInicio();	
+	public static PanelNovoJogo panel2 = new PanelNovoJogo();	
 
 
 	/*public static void esconderTela(){
@@ -19,21 +20,11 @@ public class TelaInicial {
 	
 	public TelaInicial(){
 
-		setJanela();
-		setPanelLogin();
+		
 		janela1.add(panelLogin);
 		janela1.repaint();
 		//janela1.remove(paneLogin);
 	}
 	
-	public void setJanela(){
-		this.janela1 = new Janela();
-		
-		
-		
-	};
-	public void setPanelLogin(){
-		
-		this.panelLogin = new PanelInicio();
-	};
+	
 }

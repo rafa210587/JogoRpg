@@ -14,29 +14,20 @@ import buttonEvents.PannelAtrbEvent;
 public class PanelAtributos extends JPanel{
 
 	private static final long serialVersionUID = -6231099318810158221L;
-
 	private String lblAtributos[] = {"Str", "Vit", "Dex", "Agi", "Int", "Wil"};
-
 	private Font FonteBt = new Font("Sans_serif" ,Font.BOLD, 8);
-
-	private JTextField txtPontos = new JTextField("20");
-	private JLabel lblPontos = new JLabel("Pontos");
-	
-	private int x = 5;
+	private int x = 0;
 	private int y = 5;
 	
 	public PanelAtributos() {
 		setLayout(null);
-//		setBorder(BorderFactory.createLineBorder(Color.BLACK)); //Usado somente pra orientar a localização do panel
-		
-		addPontos(); //Método específico para adcionar o Label e TextField de Pontos
 		
 		for (String s : lblAtributos){
 			add(addLabels(s));
 			add(addButtons('-', s));
 			add(addTextField(s));
 			add(addButtons('+', s));
-			x = 5;
+			x = 0;
 			y += 30;
 		}
 		
@@ -44,27 +35,6 @@ public class PanelAtributos extends JPanel{
 		repaint();
 	}
 	
-	private void addPontos() {
-		int width = lblPontos.getPreferredSize().width;
-		int height = lblPontos.getPreferredSize().height;
-		
-		add(lblPontos);
-		add(txtPontos);
-		
-		lblPontos.setName("lblPontos");
-		lblPontos.setBounds(x, y, width, height);
-		
-		x += width + 10;
-		
-		txtPontos.setName("txtPontos");
-		txtPontos.setBounds(x, y, 30, 20);
-		txtPontos.setEditable(false);
-		txtPontos.setBackground(Color.WHITE);
-		
-		y += height + 10;
-		x = 5;
-	}
-
 	private JLabel addLabels(String s){
 		JLabel label = new JLabel(s);
 		
@@ -92,7 +62,7 @@ public class PanelAtributos extends JPanel{
 	}
 	
 	private JTextField addTextField(String s){
-		JTextField txtField = new JTextField("0");
+		JTextField txtField = new JTextField();
 		
 		txtField.setName("txt" + s);
 		txtField.setBounds(x, y, 20, 20);
@@ -102,15 +72,5 @@ public class PanelAtributos extends JPanel{
 		x += 20;
 		
 		return txtField;
-	}
-	
-	public Integer getPontos(){	
-		int pontos = Integer.parseInt(txtPontos.getText());
-		
-		return pontos;
-	}
-	
-	public void setPontos(Integer pontos){
-		txtPontos.setText(String.valueOf(pontos));
 	}
 }

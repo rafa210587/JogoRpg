@@ -8,11 +8,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import pannels.PanelAtributos;
-
 public class PannelAtrbEvent implements ActionListener {
 	
-	private PanelAtributos panel;
+	private Container panel;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -69,19 +67,19 @@ public class PannelAtrbEvent implements ActionListener {
 		Component[] c = panel.getComponents();
 		int valor;
 		
-		if (panel.getPontos() > 0){
-			for (int i = 0; i < panel.getComponentCount(); i++){
-				if (c[i].getName().equals(s)){
-					JTextField text = (JTextField) panel.getComponent(i);
-					
+		for (int i = 0; i < panel.getComponentCount(); i++){
+			if (c[i].getName().equals(s)){
+				JTextField text = (JTextField) panel.getComponent(i);
+				
+				if (text.getText().equals("")) {
+					valor = 0;
+				} else {
 					valor = Integer.parseInt(text.getText()) + 1;
-					
-					panel.setPontos(panel.getPontos() - 1);
-					
-					text.setText(String.valueOf(valor));
-					
-					break;
 				}
+				
+				text.setText(String.valueOf(valor));
+				
+				break;
 			}
 		}
 	}
@@ -94,20 +92,19 @@ public class PannelAtrbEvent implements ActionListener {
 			if (c[i].getName().equals(s)){
 				JTextField text = (JTextField) panel.getComponent(i);
 				
-				if (Integer.parseInt(text.getText()) < 1) {
+				if (text.getText().equals("") || Integer.parseInt(text.getText()) < 1) {
 					text.setText("0");
 				} else {
 					valor = Integer.parseInt(text.getText()) - 1;
 					text.setText(String.valueOf(valor));
-					panel.setPontos(panel.getPontos() + 1);
 				}
-				
+			
 				break;
 			}
 		}
 	}
 	
 	private void setParent(Component c){
-		this.panel = (PanelAtributos) c.getParent();
+		this.panel = c.getParent();
 	}
 }
