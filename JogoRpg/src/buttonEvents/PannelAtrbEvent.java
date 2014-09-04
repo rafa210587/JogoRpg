@@ -12,7 +12,7 @@ import pannels.PanelAtributos;
 
 public class PannelAtrbEvent implements ActionListener {
 	
-	private PanelAtributos panel;
+	private PanelAtributos panel; //teste
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
