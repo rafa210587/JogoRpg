@@ -19,7 +19,7 @@ public class PanelAtributos extends JPanel{
 
 	private Font FonteBt = new Font("Sans_serif" ,Font.BOLD, 8);
 
-	private JTextField txtPontos = new JTextField();
+	private JTextField txtPontos = new JTextField("20");
 	private JLabel lblPontos = new JLabel("Pontos");
 	
 	private int x = 5;
@@ -39,7 +39,6 @@ public class PanelAtributos extends JPanel{
 			x = 5;
 			y += 30;
 		}
-		System.out.println(y);
 		
 		setVisible(true);
 		repaint();
@@ -103,5 +102,15 @@ public class PanelAtributos extends JPanel{
 		x += 20;
 		
 		return txtField;
+	}
+	
+	public Integer getPontos(){	
+		int pontos = Integer.parseInt(txtPontos.getText());
+		
+		return pontos;
+	}
+	
+	public void setPontos(Integer pontos){
+		txtPontos.setText(String.valueOf(pontos));
 	}
 }
