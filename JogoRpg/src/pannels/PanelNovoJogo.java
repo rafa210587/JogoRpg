@@ -27,23 +27,24 @@ public class PanelNovoJogo extends JPanel {
 	public void cabeçalhoAtributos(){
 		
 		PanelAtributos panelAtributos = new PanelAtributos();
+		PanelStatus panelStatus = new PanelStatus();
+		panelAtributos.setBounds(45, 160, 110, 245);
+		panelStatus.setBounds(300, 160, 240, 180);
 		
-		panelAtributos.setBounds(50, 190, 300, 300);
 		add(panelAtributos);
+		add(panelStatus);
 		
 		MaxCharTxt maxCharNome = new MaxCharTxt();
 		JLabel lblNomeChar = new JLabel("Nome");
 		JLabel lblClass = new JLabel("Classes");
-		JLabel lblPtos = new JLabel("Pontos");
 		
 		JTextField txtNomeChar = new JTextField();
-		JTextField txtPtos = new JTextField();
 		
 		String[] classes = {"Guerreiro", "Mago", "Ladrao"};
 		JComboBox cbClasse = new JComboBox(classes); 
 
 		
-maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres num TextField
+		maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres num TextField
 		
 		txtNomeChar.setDocument(maxCharNome);
 		//JButton b2 = new JButton("Carregar");
@@ -58,13 +59,6 @@ maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres n
 		cbClasse.setBounds(50,100 ,70,20);
 		cbClasse.setBackground(Color.WHITE);
 		add(cbClasse);
-		
-		add(lblPtos);
-		lblPtos.setBounds(50,150,120,30);		
-		add(txtPtos);
-		txtPtos.setEditable(false);
-		txtPtos.setBounds(95, 155, 30, 20);
-		txtPtos.setBackground(Color.WHITE);
 		
 	}
 	
