@@ -14,14 +14,7 @@ public class TelaInicial {
 	public static PanelInicio panelLogin = new PanelInicio();	
 	public static PanelNovoJogo panel2 = new PanelNovoJogo();	
 
-
-	/*public static void esconderTela(){
-		
-		janela.setVisible(false);
-	}*/
-	
 	public TelaInicial(){
-
 		
 		janela1.add(panelLogin);
 		janela1.repaint();

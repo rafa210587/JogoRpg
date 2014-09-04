@@ -9,34 +9,34 @@ import javax.swing.JMenuItem;
 
 public class MenuJan extends JMenuBar{
 	
+	private JMenu arquivoMenu;
+	public JMenuItem sairMenu, nvoJogo, carregarJogo; 
+	
 	public MenuJan(){
 		
+		arquivoMenu = new JMenu ("Arquivo");
+		sairMenu = new JMenuItem ("Sair");
 		
-		
-		JMenu arquivoMenu = new JMenu ("Arquivo");
-		JMenuItem sairMenu = new JMenuItem ("Sair");
-		JMenuItem teste = new JMenuItem("");
-		
-		JMenuItem nvoJogo = new JMenuItem("Novo");
-		JMenuItem  carregarJogo= new JMenuItem ("Carregar");
-		
-		
-		
+		nvoJogo = new JMenuItem("Novo");
+		carregarJogo= new JMenuItem ("Carregar");
 		
 		add(arquivoMenu);
 		add(sairMenu);
-		add(teste);
 
-		teste.setEnabled(false);
 		arquivoMenu.add(nvoJogo);
 		arquivoMenu.add(carregarJogo);
 		
-		
+		nvoJogo.addActionListener(novoJogo());
 		sairMenu.addActionListener(new exitMenu());
-				
-		
-		
-		
+	}
+	
+	public ActionListener novoJogo()
+	{
+
+		//Game.janelaMain.removeAll();
+		//Game.janelaMain.add(Game.panelNewGame);
+		//Game.janelaMain.repaint();
+		return null;
 	}
 	
 	static class exitMenu implements ActionListener

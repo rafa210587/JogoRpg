@@ -36,7 +36,7 @@ public class Personagem {
 	 * @param cor
 	 * @param tipo
 	 */
-	public void setAtributo(String nome) //int x, int y, Color cor, Tipo tipo
+	public void setAtributo(String nome, Tipo tipo) //int x, int y, Color cor
 	{
 		boolean novoAtr = true; // Bool para guardar se eh um atributo que já existe ou novo
 				
@@ -52,7 +52,7 @@ public class Personagem {
 					//i.posX = x; //Define a posX do atributo
 					//i.posY = y; //Define a posY do atributo
 					//i.campoCor = cor; //Define a cor do campo do formulario 
-					//i.campoTipo = tipo; //Define o tipo do campo do formulario
+					i.campoTipo = tipo; //Define o tipo do campo do formulario
 					novoAtr = false; //Diz que o atributo ja existia e nao eh novo
 				}
 			}
@@ -64,7 +64,7 @@ public class Personagem {
 				//atributos[newIdx].posX = x; //posX do novo atributo
 				//atributos[newIdx].posY = y; //posY do novo atributo
 				//atributos[newIdx].campoCor = cor; //cor do novo atributo no formulario
-				//atributos[newIdx].campoTipo = tipo; //tipo do novo atributo no formulario
+				atributos[newIdx].campoTipo = tipo; //tipo do novo atributo no formulario
 			}
 		}
 	}
