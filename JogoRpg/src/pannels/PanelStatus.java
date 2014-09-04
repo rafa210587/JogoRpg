@@ -59,4 +59,12 @@ public class PanelStatus extends JPanel{
 		txtField.setEnabled(false);
 		return txtField;
 	};
+	
+	private void popularTxtFields(String s){
+		int x = 0;
+		
+		
+		
+		
+	};
 }

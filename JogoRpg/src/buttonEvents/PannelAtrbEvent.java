@@ -9,10 +9,12 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import pannels.PanelAtributos;
+import pannels.PanelStatus;
 
 public class PannelAtrbEvent implements ActionListener {
 	
 	private PanelAtributos panel; //teste
+	private PanelStatus panelStatus;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -64,7 +66,14 @@ public class PannelAtrbEvent implements ActionListener {
 			break;
 		}
 	}
-	
+	private void AlteraStatus(String s){
+		Component[] c = panelStatus.getComponents();
+		
+		
+		
+		
+		
+	}
 	private void aumentaAtributo(String s){
 		Component[] c = panel.getComponents();
 		int valor;
@@ -109,5 +118,7 @@ public class PannelAtrbEvent implements ActionListener {
 	
 	private void setParent(Component c){
 		this.panel = (PanelAtributos) c.getParent();
+		this.panelStatus = (PanelStatus) panel.getParent();
+		this.panelStatus = (PanelStatus) panelStatus.getComponent(4);
 	}
 }
