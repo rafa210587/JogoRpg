@@ -6,6 +6,7 @@ import javax.swing.text.PlainDocument;
 
 public class MaxCharTxt extends PlainDocument {
 	
+	private static final long serialVersionUID = -1724385976670936740L;
 	private int maxChars;
 	
 		public void insertString(int offs, String str, AttributeSet a)

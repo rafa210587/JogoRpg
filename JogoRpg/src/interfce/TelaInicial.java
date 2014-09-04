@@ -1,7 +1,5 @@
 package interfce;
 
-import javax.swing.JPanel;
-
 import pannels.PanelInicio;
 import pannels.PanelNovoJogo;
 

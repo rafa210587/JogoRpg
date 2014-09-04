@@ -1,22 +1,18 @@
 package pannels;
 
-import interfce.Janela;
 import interfce.TelaInicial;
 
-import java.awt.Component;
-import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanelInicio extends JPanel {
 	
-	
+	private static final long serialVersionUID = -9176332488581018733L;
+
 	public PanelInicio(){
 	setLayout(null);
 	setSize(800,600);

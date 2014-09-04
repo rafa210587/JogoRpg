@@ -1,15 +1,11 @@
 package interfce;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import pannels.PanelInicio;
 
 public class Janela extends JFrame{
 	
+	private static final long serialVersionUID = 8766414523704077711L;
+
 	public Janela(){
 	
 	MenuJan menuBar = new MenuJan();	

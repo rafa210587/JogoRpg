@@ -1,24 +1,19 @@
 package pannels;
 
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentListener;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
 
 import utils.MaxCharTxt;
 
 public class PanelNovoJogo extends JPanel {
 	
+	private static final long serialVersionUID = 642265100273819865L;
+
+
 	public PanelNovoJogo(){
 		
 		setLayout(null);
@@ -46,11 +41,9 @@ public class PanelNovoJogo extends JPanel {
 		
 		String[] classes = {"Guerreiro", "Mago", "Ladrao"};
 		JComboBox cbClasse = new JComboBox(classes); 
-		
-		
+
 		
 maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres num TextField
-		
 		
 		txtNomeChar.setDocument(maxCharNome);
 		//JButton b2 = new JButton("Carregar");
@@ -79,11 +72,6 @@ maxCharNome.setMaxChars(10);// Chamada para limitar a quantidade de Caracteres n
 	public void organiza2(){
 		
 		JLabel lblHP = new JLabel("HP");
-		
-		
-		
-		
-		
 		
 	}
 }
