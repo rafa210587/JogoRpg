@@ -15,7 +15,7 @@ public class PanelAtributos extends JPanel{
 
 	private static final long serialVersionUID = -6231099318810158221L;
 
-	private String lblAtributos[] = {"Str", "Vit", "Dex", "Agi", "Int", "Wil"};
+	private String lblAtributos[] = {"Str", "Vit", "Dex", "Agi", "Int", "Wil","Lck"};
 
 	private Font FonteBt = new Font("Sans_serif" ,Font.BOLD, 8);
 

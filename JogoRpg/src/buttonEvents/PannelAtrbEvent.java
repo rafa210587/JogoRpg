@@ -67,6 +67,12 @@ public class PannelAtrbEvent implements ActionListener {
 		case "btnWil-":
 			diminuiAtributo("txtWil");
 			break;
+		case "btnLck+":
+			aumentaAtributo("txtLck");
+			break;
+		case "btnLck-":
+			diminuiAtributo("txtLck");
+			break;
 		default:
 			break;
 		}
