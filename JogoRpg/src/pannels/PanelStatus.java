@@ -16,7 +16,7 @@ public class PanelStatus extends JPanel{
 		setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		setLayout(null);
 		setVisible(true);
-		
+		setName("panelStatus");
 		
 		for (String s:Status){
 			
@@ -47,7 +47,7 @@ public class PanelStatus extends JPanel{
 	}
 
 	private JTextField addtxtFields(String s){
-		JTextField txtField = new JTextField();
+		JTextField txtField = new JTextField("0");
 		x=100;
 		y+=+3;
 		add(txtField);

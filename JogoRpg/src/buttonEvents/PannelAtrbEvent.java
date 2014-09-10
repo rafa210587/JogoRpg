@@ -1,5 +1,7 @@
 package buttonEvents;
 
+import interfce.Janela;
+
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
@@ -9,25 +11,28 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 
 import pannels.PanelAtributos;
+import pannels.PanelNovoJogo;
 import pannels.PanelStatus;
 
 public class PannelAtrbEvent implements ActionListener {
 	
-	private PanelAtributos panel; //teste
+	private PanelAtributos panelAtributos; //teste
 	private PanelStatus panelStatus;
+	private PanelNovoJogo panelNvoJgo;
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
 		JButton btn = (JButton) e.getSource();
-		
+		setParent(btn);
+
 		String btnName = btn.getName();
 		
-		setParent(btn);
 		
 		switch (btnName) {
 		case "btnStr+":
 			aumentaAtributo("txtStr");
+			aumentaStatus("txtDano");
 			break;
 		case "btnStr-":
 			diminuiAtributo("txtStr");
@@ -74,18 +79,53 @@ public class PannelAtrbEvent implements ActionListener {
 		
 		
 	}
+	
+	private void aumentaStatus(String s){
+		getPanelStatus();
+		Component[] c = panelStatus.getComponents();
+		int valor;
+		for (int i = 0; i< panelStatus.getComponentCount(); i++){
+			if (c[i].getName().equals(s)){
+				JTextField text = (JTextField) panelStatus.getComponent(i);
+				
+				valor = Integer.parseInt(text.getText())+1;
+				text.setText(String.valueOf(valor));
+			}
+			
+		}
+		System.out.println(panelStatus.getComponent(2).getName());
+		
+	}
+	private void getPanelStatus(){
+		Component[] c = panelNvoJgo.getComponents();
+		for (int i = 0; i< panelNvoJgo.getComponentCount(); i++){
+			if (c[i].getName() != null){
+				
+				
+				if (c[i].getName().equals("panelStatus")){
+				
+					this.panelStatus = (PanelStatus) c[i];
+				
+				}
+			}
+			
+		}
+		
+		
+		
+	}
 	private void aumentaAtributo(String s){
-		Component[] c = panel.getComponents();
+		Component[] c = panelAtributos.getComponents();
 		int valor;
 		
-		if (panel.getPontos() > 0){
-			for (int i = 0; i < panel.getComponentCount(); i++){
+		if (panelAtributos.getPontos() > 0){
+			for (int i = 0; i < panelAtributos.getComponentCount(); i++){
 				if (c[i].getName().equals(s)){
-					JTextField text = (JTextField) panel.getComponent(i);
+					JTextField text = (JTextField) panelAtributos.getComponent(i);
 					
 					valor = Integer.parseInt(text.getText()) + 1;
 					
-					panel.setPontos(panel.getPontos() - 1);
+					panelAtributos.setPontos(panelAtributos.getPontos() - 1);
 					
 					text.setText(String.valueOf(valor));
 					
@@ -96,19 +136,19 @@ public class PannelAtrbEvent implements ActionListener {
 	}
 	
 	private void diminuiAtributo(String s){
-		Component[] c = panel.getComponents();
+		Component[] c = panelAtributos.getComponents();
 		int valor;
 		
-		for (int i = 0; i < panel.getComponentCount(); i++){
+		for (int i = 0; i < panelAtributos.getComponentCount(); i++){
 			if (c[i].getName().equals(s)){
-				JTextField text = (JTextField) panel.getComponent(i);
+				JTextField text = (JTextField) panelAtributos.getComponent(i);
 				
 				if (Integer.parseInt(text.getText()) < 1) {
 					text.setText("0");
 				} else {
 					valor = Integer.parseInt(text.getText()) - 1;
 					text.setText(String.valueOf(valor));
-					panel.setPontos(panel.getPontos() + 1);
+					panelAtributos.setPontos(panelAtributos.getPontos() + 1);
 				}
 				
 				break;
@@ -117,8 +157,9 @@ public class PannelAtrbEvent implements ActionListener {
 	}
 	
 	private void setParent(Component c){
-		this.panel = (PanelAtributos) c.getParent();
-		this.panelStatus = (PanelStatus) panel.getParent();
-		this.panelStatus = (PanelStatus) panelStatus.getComponent(4);
+		
+		this.panelAtributos = (PanelAtributos) c.getParent();
+		this.panelNvoJgo = (PanelNovoJogo) this.panelAtributos.getParent();
+
 	}
 }
