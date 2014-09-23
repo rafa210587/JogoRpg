@@ -6,6 +6,9 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -32,34 +35,48 @@ public class PannelAtrbEvent implements ActionListener {
 		switch (btnName) {
 		case "btnStr+":
 			aumentaAtributo("txtStr");
-			aumentaStatus("txtDano");
+			aumentaDano("txtDan");
 			break;
 		case "btnStr-":
 			diminuiAtributo("txtStr");
+			diminuiDano("txtDan");
 			break;
 		case "btnVit+":
 			aumentaAtributo("txtVit");
+//			aumentaHP("txtVit");
+
 			break;
 		case "btnVit-":
 			diminuiAtributo("txtVit");
 			break;
 		case "btnDex+":
 			aumentaAtributo("txtDex");
+			aumentaEsqAce("txtAce", btnName);
 			break;
 		case "btnDex-":
 			diminuiAtributo("txtDex");
+			diminuiEsqAce("txtAce", btnName);
 			break;
 		case "btnAgi+":
 			aumentaAtributo("txtAgi");
+			aumentaEsqAce("txtEsq", btnName);
+
 			break;
 		case "btnAgi-":
 			diminuiAtributo("txtAgi");
+			diminuiEsqAce("txtEsq", btnName);
 			break;
 		case "btnInt+":
 			aumentaAtributo("txtInt");
+			aumentaEsqAce("txtEsq", btnName);
+			aumentaEsqAce("txtAce", btnName);
+
 			break;
 		case "btnInt-":
 			diminuiAtributo("txtInt");
+			diminuiEsqAce("txtEsq", btnName);
+			diminuiEsqAce("txtAce", btnName);
+
 			break;
 		case "btnWil+":
 			aumentaAtributo("txtWil");
@@ -69,24 +86,21 @@ public class PannelAtrbEvent implements ActionListener {
 			break;
 		case "btnLck+":
 			aumentaAtributo("txtLck");
+			aumentaEsqAce("txtEsq", btnName);
+			aumentaEsqAce("txtAce", btnName);
+
 			break;
 		case "btnLck-":
 			diminuiAtributo("txtLck");
+			diminuiEsqAce("txtEsq", btnName);
+			diminuiEsqAce("txtAce", btnName);
 			break;
 		default:
 			break;
 		}
 	}
-	private void AlteraStatus(String s){
-		Component[] c = panelStatus.getComponents();
-		
-		
-		
-		
-		
-	}
 	
-	private void aumentaStatus(String s){
+	private void aumentaDano(String s){
 		getPanelStatus();
 		Component[] c = panelStatus.getComponents();
 		int valor;
@@ -102,6 +116,115 @@ public class PannelAtrbEvent implements ActionListener {
 		System.out.println(panelStatus.getComponent(2).getName());
 		
 	}
+	
+	private void diminuiDano(String s){
+		getPanelStatus();
+		Component[] c = panelStatus.getComponents();
+		int valor;
+		for (int i = 0; i< panelStatus.getComponentCount(); i++){
+			if (c[i].getName().equals(s)){
+				JTextField text = (JTextField) panelStatus.getComponent(i);
+				if (Integer.parseInt(text.getText()) < 1){
+				
+				
+				text.setText("0");
+				}
+			else{
+				
+				valor = Integer.parseInt(text.getText()) - 1;
+				text.setText(String.valueOf(valor));
+				panelAtributos.setPontos(panelAtributos.getPontos() + 1);
+				}
+			}
+			
+		}
+		
+	}
+
+	private void aumentaEsqAce(String s, String btnName){
+		getPanelStatus();
+		Component[] c = panelStatus.getComponents();
+		double valor;
+		NumberFormat formatar = new DecimalFormat("#0.00");
+
+		for (int i = 0; i< panelStatus.getComponentCount(); i++){
+			if (c[i].getName().equals(s)){
+				JTextField text = (JTextField) panelStatus.getComponent(i);
+				String texto = text.getText().replace(",", ".");
+
+			if (btnName.equals("btnLck+")){
+				valor = Double.parseDouble(texto);
+				valor +=0.2;
+			
+			
+				text.setText(formatar.format(valor));
+				System.out.println(valor);
+				}
+			else {
+
+
+				valor = Double.parseDouble(texto);
+				valor +=0.5;
+			
+			
+				text.setText(formatar.format(valor));
+				
+			}
+		}
+			
+			
+			
+	}
+		
+}
+	
+	private void diminuiEsqAce(String s, String btnName){
+		getPanelStatus();
+		Component[] c = panelStatus.getComponents();
+		double valor;
+		NumberFormat formatar = new DecimalFormat("#0.00");
+
+		for (int i = 0; i< panelStatus.getComponentCount(); i++){
+			if (c[i].getName().equals(s)){
+				JTextField text = (JTextField) panelStatus.getComponent(i);
+				String texto = text.getText().replace(",", ".");
+
+				if (btnName.equals("btnLck-") && Double.parseDouble(texto) < 0.2){
+				
+				
+				text.setText("0");
+				}
+			else if (btnName.equals("btnLck-")){
+				
+				valor = Double.parseDouble(texto) - 0.2;
+				text.setText(formatar.format(valor));
+				System.out.println(valor);
+
+				}
+			else if(!btnName.equals("btnLck-")) {
+				
+				valor = Double.parseDouble(texto) - 0.5;
+				text.setText(formatar.format(valor));
+
+				
+			}
+			else if (!btnName.equals("btnLck-") && Double.parseDouble(texto) < 0.5) {
+				
+				text.setText("0");
+
+				
+				
+				
+			}
+			}
+			
+		}
+		
+	}
+	
+	
+	
+	
 	private void getPanelStatus(){
 		Component[] c = panelNvoJgo.getComponents();
 		for (int i = 0; i< panelNvoJgo.getComponentCount(); i++){

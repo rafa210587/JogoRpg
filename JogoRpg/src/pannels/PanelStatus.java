@@ -12,18 +12,26 @@ public class PanelStatus extends JPanel{
 	private int x=0;
 	private int y=5;
 	private String[] Status = {"Dano","Acerto","Esquiva","Dano Magico","Defesa Magica","Acerto Crit"};
+	private String lblAtributos[] = {"Dan", "Ace", "Esq", "DanM", "DefM","AceC"};
+
+	
 	public PanelStatus(){
-		setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		setBorder(null);
 		setLayout(null);
 		setVisible(true);
 		setName("panelStatus");
+		String[] t = lblAtributos;
+		int i = 0;	
 		
 		for (String s:Status){
-			
+		
+		
 		addLabels(s);
-		addtxtFields(s);
+		addtxtFields(t[i]);
+		i = i+1;
 		
 		}
+		
 		repaint();
 	
 	}
@@ -46,12 +54,12 @@ public class PanelStatus extends JPanel{
 		return label;
 	}
 
-	private JTextField addtxtFields(String s){
+	private JTextField addtxtFields(String t){
 		JTextField txtField = new JTextField("0");
 		x=100;
 		y+=+3;
 		add(txtField);
-		txtField.setName("txt" + s);
+		txtField.setName("txt" + t);
 		txtField.setBounds(x,y,30,20);
 		y += 25;
 		x=0;

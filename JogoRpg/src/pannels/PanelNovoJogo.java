@@ -29,7 +29,7 @@ public class PanelNovoJogo extends JPanel {
 		PanelAtributos panelAtributos = new PanelAtributos();
 		PanelStatus panelStatus = new PanelStatus();
 		panelAtributos.setBounds(45, 160, 110, 275);
-		panelStatus.setBounds(300, 160, 240, 180);
+		panelStatus.setBounds(180, 185, 240, 180);
 		
 		add(panelAtributos);
 		add(panelStatus);
